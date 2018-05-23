@@ -11,6 +11,7 @@ Resources:
       Timeout: 10
       Policies:
       - AWSLambdaRole
+      - AmazonSSMReadOnlyAccess
       Tracing: Active
       Events:
         GocalPersonalSchedule:

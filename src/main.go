@@ -31,7 +31,7 @@ import (
 // Variables that are set as Environment Variables
 var (
 	trelloARN            = os.Getenv("arntrello")
-	clientSecret         = os.Getenv("clientsecret")
+	clientSecret         = os.Getenv("cspointer")
 	calendarTimeInterval = os.Getenv("interval")
 	calendarTokenPointer = os.Getenv("tokenpointer")
 	region               = "us-west-2"
@@ -74,7 +74,10 @@ func handler(request events.CloudWatchEvent) error {
 	log.Printf("Processing Lambda request [%s]", request.ID)
 
 	// Create a new Google configuration
-	csString, _ := getSSMParameter(ssmSession, clientSecret, true)
+	csString, err := getSSMParameter(ssmSession, clientSecret, true)
+	if err != nil {
+		log.Fatalf("Error trying to get parameter: %v", err)
+	}
 	byteString := []byte(csString)
 	config, err := google.ConfigFromJSON(byteString, calendar.CalendarReadonlyScope)
 	if err != nil {
