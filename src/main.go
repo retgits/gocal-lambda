@@ -74,7 +74,8 @@ func handler(request events.CloudWatchEvent) error {
 	log.Printf("Processing Lambda request [%s]", request.ID)
 
 	// Create a new Google configuration
-	byteString := []byte(clientSecret)
+	csString, _ := getSSMParameter(ssmSession, clientSecret, true)
+	byteString := []byte(csString)
 	config, err := google.ConfigFromJSON(byteString, calendar.CalendarReadonlyScope)
 	if err != nil {
 		log.Fatalf("Unable to parse client secret file to config: %v", err)

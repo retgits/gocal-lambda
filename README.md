@@ -38,8 +38,10 @@ Within the AWS Systems Manager Parameter store there are three parameters that a
 
 * /arn/trello
 * /gocal*/clientsecret
+* /gocal*/token
 * /gocal*/interval
 * /gocal*/tokenpointer
+* /gocal*/cspointer
 
 ## TODO
 - [ ] Update the `deps` target in build.sh to make use of dep or simply have a smarter approach than list all dependencies

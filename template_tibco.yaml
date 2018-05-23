@@ -20,7 +20,7 @@ Resources:
       Environment:
         Variables:
           arntrello: xxx
-          clientsecret: xxx
+          cspointer: xxx
           interval: xxx
           tokenpointer: xxx
       Tags:
