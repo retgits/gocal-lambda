@@ -13,10 +13,10 @@ Resources:
       - AWSLambdaRole
       Tracing: Active
       Events:
-        GitHubIssues:
+        GocalTIBCOSchedule:
           Type: Schedule
           Properties:
-            Schedule: cron(0/15 * * * ? *)
+            Schedule: cron(0 */2 * * ? *)
       Environment:
         Variables:
           arntrello: xxx
@@ -25,4 +25,3 @@ Resources:
           tokenpointer: xxx
       Tags:
         commit: xxx
-        type: xxx
