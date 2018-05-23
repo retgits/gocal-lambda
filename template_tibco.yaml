@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: The AWS CloudFormation template for the Google Calendar Serverless application
+Resources:
+  GocalTIBCO:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: bin/
+      Handler: gocaltibco
+      Runtime: go1.x
+      Timeout: 10
+      Policies:
+      - AWSLambdaRole
+      Tracing: Active
+      Events:
+        GitHubIssues:
+          Type: Schedule
+          Properties:
+            Schedule: cron(0/15 * * * ? *)
+      Environment:
+        Variables:
+          arntrello: xxx
+          clientsecret: xxx
+          interval: xxx
+          tokenpointer: xxx
+      Tags:
+        commit: xxx
+        type: xxx
