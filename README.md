@@ -1,4 +1,4 @@
-# GitHub app for Google Calendar
+# Lambda app for Google Calendar
 
 This Serverless function is designed to query the Google Calendar API for upcoming appointments of the current user.
 
@@ -47,26 +47,3 @@ Within the AWS Systems Manager Parameter store there are three parameters that a
 - [ ] Update the `deps` target in build.sh to make use of dep or simply have a smarter approach than list all dependencies
 - [ ] Make sure that all the calls to SSM are correctly traced with XRay
 - [ ] Come up with a better way to deploy the same function with different parameters
-
-## License
-The MIT License (MIT)
-
-Copyright (c) 2018 retgits
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
